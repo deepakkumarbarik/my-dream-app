@@ -26,6 +26,7 @@ import { GestureConfig } from '@angular/material';
 import * as _ from 'lodash';
 import { AppModule } from './app/app.module';
 import { AccountModule } from './account/account.module';
+import { AppRouteGuard } from './shared/auth/auth-route-guard';
 
 
 
@@ -36,6 +37,7 @@ import { AccountModule } from './account/account.module';
     AppModule,
     AccountModule,
     FormsModule,
+
     //SharedModule.forRoot(),
     // ModalModule.forRoot(),
     //AbpModule,
@@ -49,6 +51,7 @@ import { AccountModule } from './account/account.module';
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+    AppRouteGuard,
   ],
   bootstrap: [RootComponent]
 })
